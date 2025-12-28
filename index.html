@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удивительный сайт</title>
+    <!-- Подключаем внешний CSS-файл -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <h1>Добро пожаловать в будущее</h1>
+        <p>Этот сайт — не просто набор пикселей. Это опыт, который останется с вами надолго. Мы объединили красоту дизайна, плавную анимацию и интерактивность, чтобы подарить вам незабываемые впечатления.</p>
+        
+        <button class="btn">Исследовать дальше</button>
+        
+        <div class="feature-grid">
+            <div class="feature">
+                <h3>Живая анимация</h3>
+                <p>Каждый элемент реагирует на ваши действия, создавая ощущение настоящего взаимодействия.</p>
+            </div>
+            <div class="feature">
+                <h3>Адаптивный дизайн</h3>
+                <p>Идеально выглядит на любом устройстве — от смартфона до большого монитора.</p>
+            </div>
+            <div class="feature">
+                <h3>Современные технологии</h3>
+                <p>Построен на чистом HTML и CSS с использованием последних возможностей браузеров.</p>
+            </div>
+        </div>
+        
+        <footer>
+            © 2025 Удивительный сайт. Все права защищены.
+        </footer>
+    </div>
+
+    <script>
+        // Создаем частицы
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Случайные размеры от 5 до 20px
+                const size = Math.random() * 15 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                // Случайное начальное положение
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+
+                // Случайная задержка анимации
+                particle.style.animationDelay = `-${Math.random() * 8}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Запускаем создание частиц при загрузке страницы
+        window.addEventListener('load', createParticles);
+    </script>
+</body>
+</html>
